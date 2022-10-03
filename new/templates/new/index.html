@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} :3</title>
+</head>
+<body>
+ <h1>{{ title }}</h1>
+
+<div class="media">
+    {% for item in news__ %}
+     <hr>
+        <img src="{{ item.img_news.url }}" alt="" width="100">
+    <div class="media-body">
+        <p> {{ item.name }} </p>
+        <p> {{ item.text }} </p>
+        <p> {{ item.chance }} </p>
+        <p> {{ item.date_published }} </p>
+        <p> {{ item.category_news }} </p>
+        <hr>
+    {% endfor %}
+    </div>
+</div>
+</body>
+</html>
