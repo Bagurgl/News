@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 
-from .models import New
+from .models import *
 
 
 def index(request):
@@ -14,9 +14,11 @@ def index(request):
 
 def index1(request):
     news = New.objects.all()  # Сортировка: object.order_by(-name)         Филтр: object.filter(id=2)
+    cat = Category_News.objects.all()
     context = {
         'news__': news,
         'title': 'Новости ВТБ',
+        'category': cat,
     }
     return render(request, 'new/index1.html', context)
 

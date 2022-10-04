@@ -1,4 +1,6 @@
 /*css reset*/
+{% load static %}
+
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +15,7 @@
 }
 
 body {
-    background-image: url(/img/geometric.png);
+    background-image: url(../img/geometric.png);
     background-color: #000000;
     background-size: 100%;
 }

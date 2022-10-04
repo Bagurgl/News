@@ -28,15 +28,16 @@
             <li>
                 <h2>Выберите категории:</h2>
             </li>
-            <li><button>{{ item.category_news }}</button></li>
-            <li><button>{{ item.category_news }}</button></li>
-            <li><button>{{ item.category_news }}</button></li>
+            {% for item in category %}
+                {% if item.category %}
+            <li><button>{{ item.category }}</button></li>
+                {% endif %}
+            {% endfor %}
         </ul>
     </div>
 </header>
 <div class="media">
     {% for item in news__ %}
-     <hr>
         <img src="{{ item.img_news.url }}" alt="" width="100">
     <div class="media-body">
         <p> {{ item.name }} </p>
@@ -47,6 +48,4 @@
         <hr>
     {% endfor %}
     </div>
-</div>
-</div>
 </div>
