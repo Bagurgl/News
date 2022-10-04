@@ -1,0 +1,219 @@
+/*css reset*/
+* {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/img/geometric.png);
+    background-color: #000000;
+    background-size: 100%;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+    box-shadow: 0px 2px 20px rgba(255, 255, 255, 0.523);
+    z-index: 2;
+
+    background: #002a74;
+}
+
+/*Логотип*/
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo__pic {
+    width: 100px;
+    padding-right: 10px;
+}
+
+.logo__text {
+    display: block;
+    align-items: center;
+    text-decoration: none;
+    padding: 0px 10px;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 32px;
+}
+
+.logo p {
+    color: white;
+    font-size: 16px;
+}
+
+/*Панель управления*/
+#toolsbar {
+    position: fixed;
+    top: 0px;
+    width: 300px;
+    height: 80%;
+
+    background: #000000e4;
+    /*Прозрачность панели*/
+
+    left: -304px;
+    border-radius: 10px;
+    border: 2px solid #e0e5ea;
+
+    -moz-transition: all 400ms;
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+}
+
+/*Появление панели управления*/
+#toolsbar.active {
+    left: 0px;
+}
+
+/*Название панели управления*/
+#toolsbar ul li:first-child {
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    list-style: none;
+    padding-top: 10px;
+}
+
+#toolsbar ul li h2 {
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    list-style: none;
+    padding: 0px;
+}
+
+/*Элементы панели управления*/
+#toolsbar ul li:not(:first-child) {
+    font-size: 1.1em;
+    list-style: none;
+    padding: 10px;
+    text-align: center;
+}
+
+/*Кнопки*/
+#toolsbar ul li button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #4676d7;
+    color: #fff;
+    padding: 8px 1px;
+    font-size: 16px;
+    min-width: 200px;
+}
+
+/*Цвет элементов при наведении*/
+#toolsbar ul li button:hover {
+    border: 2px solid white;
+}
+
+#toolsbar .toogle-btn {
+    position: absolute;
+    left: 315px;
+    margin-top: 10px;
+    background: #e0e5ea;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#toolsbar .toogle-btn:hover {
+    background: #76a1ce;
+}
+
+#toolsbar .toogle-btn:hover span {
+    background: #fafafa;
+}
+
+#toolsbar .toogle-btn span {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #666;
+    margin: 4px;
+}
+
+main {
+    z-index: -1;
+    position: fixed;
+    left: 10%;
+    right: 10%;
+    height: 100%;
+    background-color: #001234;
+}
+
+.news h1 {
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    padding: 15px 5px;
+}
+
+.media-body {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    left: 15%;
+    right: 15%;
+}
+
+.news__img {
+    width: 100%;
+}
+
+.news__name {
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 10px 10px 10px;
+}
+
+.news__text {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    margin: 10px 10px 10px 10px;
+}
+
+.news__read a {
+    text-decoration: none;
+    color: rgb(0, 74, 210);
+    font-size: 16px;
+    margin: 10px 10px 10px 10px;
+}
+
+.news__chance {
+    color: rgb(0, 0, 0);
+    padding: 10px 0 0 0;
+    font-size: 12px;
+    margin: 10px 10px 10px 10px;
+}
+
+.news__date {
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    margin: 10px 10px 10px 10px;
+}
+
+.news__category {
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    margin: 10px 10px 10px 10px;
+}

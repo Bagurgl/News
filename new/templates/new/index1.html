@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <script type="text/javascript" src="{% static '/js/script.js' %}"></script>
+    <link rel="shortcut icon" href="{% static '/img/vtb_short_logo.jpeg' %}">
+    <title>{{ title }}</title>
+</head>
+
+<header>
+    <section class="logo">
+        <img class="logo__pic" src="{% static '/img/logo_vtb.jpg' %}" alt="Логотип ВТБ">
+        <div class="logo__text">
+            <h1>{{ title }}</h1>
+            <p>Самые персонализированные новости</p>
+        </div>
+    </section>
+    <div id="toolsbar">
+        <div class="toogle-btn" onclick="openMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li>Фильтры</li>
+            <li>
+                <h2>Выберите категории:</h2>
+            </li>
+            <li><button>{{ item.category_news }}</button></li>
+            <li><button>{{ item.category_news }}</button></li>
+            <li><button>{{ item.category_news }}</button></li>
+        </ul>
+    </div>
+</header>
+<div class="news">
+    <h1>
+        {{ title }}
+    </h1>
+    {% for item in news__ %}
+        <div class="media">
+        <div class="media-body">
+        <img class="news__img" src="{% static '/img/news_1.jpg' %}" alt="">
+        <hr>
+        <div class="media-body">
+            <p> {{ item.name }} </p>
+            <p> {{ item.text }} </p>
+            <p> {{ item.chance }} </p>
+            <p> {{ item.date_published }} </p>
+            <p> {{ item.category_news }} </p>
+            <hr>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+</div>
