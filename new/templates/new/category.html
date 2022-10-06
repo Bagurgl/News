@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <script type="text/javascript" src="{% static '/js/script.js' %}"></script>
     <link rel="shortcut icon" href="{% static '/img/vtb_short_logo.jpeg' %}">
-    <title>{{ title }}</title>
+    <title>{{ category.category }}</title>
 </head>
 
 <header>
     <section class="logo">
         <img class="logo__pic" src="{% static '/img/logo_vtb.jpg' %}" alt="Логотип ВТБ">
         <div class="logo__text">
-            <h1>{{ title }}</h1>
+            <h1>{{ category.category }}</h1>
             <p>Самые персонализированные новости</p>
         </div>
     </section>
@@ -28,7 +28,7 @@
             <li>
                 <h2>Выберите категории:</h2>
             </li>
-            {% for item in category %}
+            {% for item in cats %}
                 {% if item.category %}
             <li><button onclick="window.location.href = '/category/{{ item.pk }}'">{{ item.category }}</button></li>
                 {% endif %}
@@ -37,7 +37,7 @@
     </div>
 </header>
 <div class="media">
-    {% for item in news__ %}
+    {% for item in news %}
         <img src="{{ item.img_news.url }}" alt="" width="100">
     <div class="media-body">
         <p> {{ item.name }} </p>

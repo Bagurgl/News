@@ -23,3 +23,9 @@ def index1(request):
     return render(request, 'new/index1.html', context)
 
 
+def get_category(request, category_news_id):
+    news = New.objects.filter(category_news_id=category_news_id)
+    cats = Category_News.objects.all()
+    category = Category_News.objects.get(pk=category_news_id)
+    return render(request, 'new/category.html', {'news': news, 'cats': cats,
+                                                 'category': category})
