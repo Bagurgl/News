@@ -30,14 +30,15 @@
             </li>
             {% for item in cats %}
                 {% if item.category %}
-            <li><button onclick="window.location.href = '/category/{{ item.pk }}'">{{ item.category }}</button></li>
+            <li><button onclick="window.location.href = '{% url 'category' item.pk  %}'">{{ item.category }}</button></li>
                 {% endif %}
             {% endfor %}
         </ul>
     </div>
 </header>
-<div class="media">
+
     {% for item in news %}
+        <div class="media">
         <img src="{{ item.img_news.url }}" alt="" width="100">
     <div class="media-body">
         <p> {{ item.name }} </p>
@@ -46,6 +47,7 @@
         <p> {{ item.date_published }} </p>
         <p> {{ item.category_news }} </p>
         <hr>
-    {% endfor %}
     </div>
+    {% endfor %}
+
 </div>
