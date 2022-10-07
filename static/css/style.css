@@ -22,13 +22,14 @@ body {
 
 header {
     width: 100%;
+    position: fixed;
     display: flex;
     justify-content: center;
     padding: 10px 0 10px 0;
     box-shadow: 0px 2px 20px rgba(255, 255, 255, 0.523);
     z-index: 2;
 
-    background: #002a74;
+    background: rgb(0, 42, 116);
 }
 
 /*Логотип*/
@@ -66,6 +67,7 @@ header {
     top: 0px;
     width: 300px;
     height: 80%;
+    z-index: 2;
 
     background: #000000e4;
     /*Прозрачность панели*/
@@ -155,12 +157,28 @@ header {
 }
 
 main {
-    z-index: -1;
-    position: fixed;
-    left: 10%;
-    right: 10%;
-    height: 100%;
-    background-color: #001234;
+    z-index: 1;
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    background-color: rgba(0, 42, 116, 0.49);
+}
+
+main h1{
+    color: white;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 48px;
+}
+
+.media {
+    z-index: 1;
+    margin-top: 100px;
+    left: 20%;
+    right: 20%;
+    padding: 0 15%;
 }
 
 .news h1 {
@@ -170,15 +188,19 @@ main {
 }
 
 .media-body {
-    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #ffffff;
     border-radius: 10px;
-    left: 15%;
-    right: 15%;
+    margin-bottom: 5%;
 }
 
 .news__img {
-    width: 100%;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .news__name {
