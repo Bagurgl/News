@@ -22,7 +22,7 @@
     pip install -r requirements.txt
     ```
 4. После установки для запуска программы требуется:<br>
-<img src="static/img/path.png" height="250px">
+    <img src="static/img/path.png" height="250px"><br>
     4.1. Открыть корневую директорию<br>
     4.2. Скопировать данную директорию, открыть командную строку и ввести:
     ```
