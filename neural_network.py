@@ -80,15 +80,30 @@ try:
         words = [reverse_word_map.get(letter) for letter in list_of_indices]
         return(words)
 
-    for i in range(36, 70):
+
+    with connection.cursor() as cursor:
+        cursor.execute(f"SELECT id_news FROM news_biznes")
+        id = cursor.fetchall()
+    for i in range(0,35):
+        del id[i]
+    result = []
+    for i in range(36, len(dat)):
         t = "".join(dat[i]).lower()
         data = tokenizer.texts_to_sequences([t])
         data_pad = keras.preprocessing.sequence.pad_sequences(data, maxlen=max_text_len)
 
         res = model.predict(data_pad)
         print(res, np.argmax(res), sep='\n')
-        if np.argmax(res) == 0:
-            print(t)
+        if res[0][0]>res[0][1]:
+            result.append(res[0][0])
+        else: result.append(0)
+    for i in range(len(dat) - 36 - 1):
+        for j in range(len(dat) - 36  - i - 1):
+            if result[j] < result[j + 1]:
+                id[j], id[j + 1] = id[j + 1], id[j]
+                result[j], result[j + 1] = result[j + 1], result[j]
+    print(id)
+    print(result)
 
 except Exception as _ex:
     print("[INFO] Error while working with PostgreSQL", _ex)
