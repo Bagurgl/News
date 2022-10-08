@@ -32,7 +32,7 @@
         ```
 5. Далее необходимо зайти в браузер и ввести http://127.0.0.1:8000/
 <br>
-<img align="center" src="static/img/site.png" height="250px">
+<img align="center" src="static/img/site.png" height="500px">
 <h2>Приятной работы!</h2>
 Данный продукт разработан молодой и успешной командой разработчиков Gecko<br>
 <img align="center" src="static/img/Gecko.png" alt="logo" height="100"/>
