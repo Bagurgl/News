@@ -13,7 +13,7 @@
 
 Для установки программы необходимо:
 1. Скачать PostgreSQL (PGadmin 4)
-2. Создать таблицу следующего вида с помощью PGadmin 4:<img src="News/static/img/data.jpg" height="250px">
+2. Создать таблицу следующего вида с помощью PGadmin 4:<img src="static/img/data.jpg" height="250px">
 3. Скачать библиотеки:
    1. Для этого в командной строке перейти в директорию, где находится файл requirements.txt (там же где и файл README.md)
    2. Написать следующую команду:
@@ -21,7 +21,7 @@
         pip install -r requirements.txt
         ```
 4. После установки для запуска программы требуется:
-   1. Открыть корневую директорию<img src="News/static/img/path.png" height="250px">
+   1. Открыть корневую директорию<img src="static/img/path.png" height="250px">
    2. Скопировать данную директорию, открыть командную строку и ввести:
         ```
         cd <Ваша директория>
@@ -34,4 +34,4 @@
 
 <h2>Приятной работы!</h2> 
 Данный продукт разработан молодой и успешной командой разработчиков Gecko<br>
-<img align="center" src="News/static/img/Gecko.png" alt="logo" height="100"/>
+<img align="center" src="static/img/Gecko.png" alt="logo" height="100"/>
