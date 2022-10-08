@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <script type="text/javascript" src="{% static '/js/script.js' %}"></script>
     <link rel="shortcut icon" href="{% static '/img/vtb_short_logo.jpeg' %}">
-    <title>{{ category.category }}</title>
+    <title>Новости ВТБ</title>
 </head>
 
 <header>
     <section class="logo">
         <img class="logo__pic" src="{% static '/img/logo_vtb.jpg' %}" alt="Логотип ВТБ">
         <div class="logo__text">
-            <h1>{{ category.category }}</h1>
-            <p><a href="{% url 'home' %}">Самые персонализированные новости</a></p>
+            <a class="text_a" href="{% url 'home' %}"><h1>Новости ВТБ</h1></a>
+            <a class="text_a" href="{% url 'home' %}">Самые персонализированные новости</a>
         </div>
     </section>
     <div id="toolsbar">
@@ -24,10 +24,7 @@
             <span></span>
         </div>
         <ul>
-            <li>Фильтры</li>
-            <li>
-                <h2>Выберите категории:</h2>
-            </li>
+            <li>Выберите роль:</li>
             {% for item in cats %}
                 {% if item.category %}
             <li><button onclick="window.location.href = '{% url 'category' item.pk  %}'">{{ item.category }}</button></li>
@@ -37,18 +34,16 @@
     </div>
 </header>
 <main>
-    <h1>{{ category }}</h1>
+    <h1>{{ category }}:</h1>
     {% for item in news %}
     <div class="media">
         <div class="media-body">
-            <p class="news__category"> {{ item.category_news }} </p>
             <img class="news__img" src="{{ item.img_news.url }}" alt="" width="10%">
             <p class="news__name"> {{ item.name }} </p>
             <p class="logo__text"> {{ item.text|truncatechars:54 }} </p>
             <p class="news__read">
                 <a href="{% url 'new' item.id %}">Читать далее...</a>
             </p>
-            <p class="news__chance"> {{ item.chance }} </p>
             <p class="news__date"> {{ item.date_published }} </p>
         </div>
     </div>

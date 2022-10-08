@@ -9,6 +9,7 @@ class New(models.Model):
     date_published = models.DateTimeField('Дата опубликования', auto_now_add=True)
     category_news = models.ForeignKey('Category_News', on_delete=models.PROTECT, verbose_name='Категория')
     img_news = models.ImageField(upload_to='photos/', verbose_name='Фото', blank=True)
+    like = models.ForeignKey('likee', on_delete=models.CASCADE, verbose_name='Лайк', null=True)
 
     def __str__(self):
         return self.name
@@ -40,3 +41,14 @@ class Crypta(models.Model):
     class Meta:
         verbose_name = 'КриптоНовость'
         verbose_name_plural = 'КриптоНовости'
+
+
+class Likee(models.Model):
+    like = models.BooleanField('Лайк', blank=True)
+
+    def __str__(self):
+        return 'like'
+
+    class Meta:
+        verbose_name = 'Лайк'
+        verbose_name_plural = 'Лайки'

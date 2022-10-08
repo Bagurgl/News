@@ -25,5 +25,7 @@ def get_category(request, category_news_id):
 def get_new(request, new_id):
     new = New.objects.filter(pk=new_id)
     cats = Category_News.objects.all()
+    if request.method == 'POST':
+        New.like = True
     return render(request, 'new/get_new.html', {'new': new, 'cats': cats})
 
