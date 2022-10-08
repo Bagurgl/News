@@ -22,13 +22,14 @@ body {
 
 header {
     width: 100%;
+    position: fixed;
     display: flex;
     justify-content: center;
     padding: 10px 0 10px 0;
     box-shadow: 0px 2px 20px rgba(255, 255, 255, 0.523);
     z-index: 2;
 
-    background: #002a74;
+    background: rgb(0, 42, 116);
 }
 
 /*Логотип*/
@@ -55,9 +56,10 @@ header {
     font-size: 32px;
 }
 
-.logo p {
+.text_a {
     color: white;
     font-size: 16px;
+    text-decoration: none;
 }
 
 /*Панель управления*/
@@ -65,7 +67,8 @@ header {
     position: fixed;
     top: 0px;
     width: 300px;
-    height: 80%;
+    height: 30%;
+    z-index: 2;
 
     background: #000000e4;
     /*Прозрачность панели*/
@@ -90,15 +93,7 @@ header {
     color: white;
     font-size: 1.5em;
     list-style: none;
-    padding-top: 10px;
-}
-
-#toolsbar ul li h2 {
-    text-align: center;
-    color: white;
-    font-size: 1em;
-    list-style: none;
-    padding: 0px;
+    padding-top: 20px;
 }
 
 /*Элементы панели управления*/
@@ -106,6 +101,7 @@ header {
     font-size: 1.1em;
     list-style: none;
     padding: 10px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -118,14 +114,16 @@ header {
     border-radius: 5px;
     background: #4676d7;
     color: #fff;
-    padding: 8px 1px;
+    padding: 10px 1px;
     font-size: 16px;
-    min-width: 200px;
+    min-width: 250px;
 }
 
 /*Цвет элементов при наведении*/
 #toolsbar ul li button:hover {
     border: 2px solid white;
+    font-weight: bold;
+    font-size: 17px;
 }
 
 #toolsbar .toogle-btn {
@@ -155,12 +153,25 @@ header {
 }
 
 main {
-    z-index: -1;
-    position: fixed;
+    z-index: 1;
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    background-color: rgba(0, 42, 116, 0.49);
+}
+
+main h1{
+    color: white;
+    margin: 100px 0px 20px 20px;
+    font-size: 48px;
+}
+
+.media {
+    z-index: 1;
+    margin-top: 0px;
     left: 10%;
     right: 10%;
-    height: 100%;
-    background-color: #001234;
+    padding: 0 15%;
 }
 
 .news h1 {
@@ -169,16 +180,26 @@ main {
     padding: 15px 5px;
 }
 
+.pusto{
+    font-size: 100px;
+    color: rgba(0, 0, 0, 0);
+}
+
 .media-body {
-    position: absolute;
+    display: block;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #ffffff;
     border-radius: 10px;
-    left: 15%;
-    right: 15%;
+    margin-bottom: 5%;
 }
 
 .news__img {
-    width: 100%;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .news__name {

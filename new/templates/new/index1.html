@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <script type="text/javascript" src="{% static '/js/script.js' %}"></script>
     <link rel="shortcut icon" href="{% static '/img/vtb_short_logo.jpeg' %}">
-    <title>{{ title }}</title>
+    <title>Новости ВТБ</title>
 </head>
 
 <header>
     <section class="logo">
         <img class="logo__pic" src="{% static '/img/logo_vtb.jpg' %}" alt="Логотип ВТБ">
         <div class="logo__text">
-            <h1>{{ title }}</h1>
-            <p>Самые персонализированные новости</p>
+            <a class="text_a" href="{% url 'home' %}"><h1>Новости ВТБ</h1></a>
+            <a class="text_a" href="{% url 'home' %}">Самые персонализированные новости</a>
         </div>
     </section>
     <div id="toolsbar">
@@ -24,28 +24,28 @@
             <span></span>
         </div>
         <ul>
-            <li>Фильтры</li>
-            <li>
-                <h2>Выберите категории:</h2>
-            </li>
+            <li>Выберите роль:</li>
             {% for item in category %}
                 {% if item.category %}
-            <li><button onclick="window.location.href = '/category/{{ item.pk }}'">{{ item.category }}</button></li>
+            <li><button onclick="window.location.href = '{% url 'category' item.pk  %}'">{{ item.category }}</button></li>
                 {% endif %}
             {% endfor %}
         </ul>
     </div>
 </header>
-<div class="media">
-    {% for item in news__ %}
-        <img src="{{ item.img_news.url }}" alt="" width="100">
-    <div class="media-body">
-        <p> {{ item.name }} </p>
-        <p> {{ item.text }} </p>
-        <p> {{ item.chance }} </p>
-        <p> {{ item.date_published }} </p>
-        <p> {{ item.category_news }} </p>
-        <hr>
-    {% endfor %}
+<main>
+    <h1>Общие новости:</h1>
+    {% for item in news %}
+    <div class="media">
+        <div class="media-body">
+            <img class="news__img" src="{{ item.img_news.url }}" alt="" width="10%">
+            <p class="news__name"> {{ item.name }} </p>
+            <p class="logo__text"> {{ item.text|truncatechars:54 }} </p>
+            <p class="news__read">
+                <a href="{% url 'new' item.id %}">Читать далее...</a>
+            </p>
+            <p class="news__date"> {{ item.date_published }} </p>
+        </div>
     </div>
-</div>
+    {% endfor %}
+</main>

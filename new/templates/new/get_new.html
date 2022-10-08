@@ -34,17 +34,15 @@
     </div>
 </header>
 <main>
-    <h1>{{ category }}:</h1>
-    {% for item in news %}
+<p class="pusto">.</p>
+    {% for item in new %}
     <div class="media">
         <div class="media-body">
             <img class="news__img" src="{{ item.img_news.url }}" alt="" width="10%">
             <p class="news__name"> {{ item.name }} </p>
-            <p class="logo__text"> {{ item.text|truncatechars:54 }} </p>
-            <p class="news__read">
-                <a href="{% url 'new' item.id %}">Читать далее...</a>
-            </p>
+            <p class="logo__text"> {{ item.text }} </p>
             <p class="news__date"> {{ item.date_published }} </p>
+            <li><button method="POST">Like</button></li>
         </div>
     </div>
     {% endfor %}
