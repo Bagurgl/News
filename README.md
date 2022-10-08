@@ -14,7 +14,7 @@
 Для установки программы необходимо:
 1. Скачать PostgreSQL (PGadmin 4)
     1.1. Создать таблицу следующего вида с помощью PGadmin 4:<br>
-    <img src="static/img/data.jpg" height="500px">
+    <img src="static/img/data.jpg" height="250px">
 3. Скачать 
 4. Скачать библиотеки:
     3.1. Для этого в командной строке перейти в директорию, где находится файл requirements.txt (там же где и файл README.md)
